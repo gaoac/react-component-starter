@@ -1,8 +1,8 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const common = require("./webpack.config.common.js");
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "development",
@@ -10,7 +10,7 @@ module.exports = merge(common, {
     app: "./example/src/index.js"
   },
   output: {
-    filename: "[name].js",
+    filename: "js/[name].[hash:8].bundle.js",
     path: path.resolve(__dirname, "../dist")
   },
   devServer: {
@@ -22,8 +22,8 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'example/src/index.html',
-      inject: 'body',
+      template: "example/src/index.html",
+      inject: "body",
       hash: false
     }),
     new webpack.HotModuleReplacementPlugin()
