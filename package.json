@@ -4,7 +4,7 @@
   "description": "一个React 组件库启动器",
   "main": ".src/index.js",
   "scripts": {
-    "build": "webpack --config ./config/webpack.config.js",
+    "build": "webpack --config ./config/webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/gaoac/react-component-starter#readme",
   "devDependencies": {
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2"
   }
 }
