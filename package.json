@@ -1,9 +1,10 @@
 {
   "name": "react-component-starter",
   "version": "0.0.1",
-  "description": "一个React 组件库启动器",
+  "description": "一个 React 组件库启动器",
   "main": ".src/index.js",
   "scripts": {
+    "start": "webpack-dev-server --inline --config ./config/webpack.config.dev.js",
     "build": "webpack --config ./config/webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,8 +24,21 @@
   },
   "homepage": "https://github.com/gaoac/react-component-starter#readme",
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }
