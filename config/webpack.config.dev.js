@@ -20,6 +20,14 @@ module.exports = merge(common, {
     compress: true,
     hot: true
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "example/src/index.html",
