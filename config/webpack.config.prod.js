@@ -9,11 +9,12 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   entry: {
-    index: "./src/index.js"
+    index: "./src/index.js",
+    framework: ["react", "react-dom"]
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "../dist")
+    path: path.resolve(__dirname, "../dist"),
   },
   optimization: {
     minimizer: [
@@ -26,7 +27,26 @@ module.exports = merge(common, {
         },
         canPrint: true
       })
-    ]
+    ],
+    splitChunks: {
+      chunks: "all",
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      cacheGroups: {
+        framework: {
+          test: "framework",
+          name: "framework",
+          enforce: true
+        },
+        vendors: {
+          priority: -10,
+          test: /node_modules/,
+          name: "vendor",
+          enforce: true
+        }
+      }
+    }
   },
   module: {
     rules: [
