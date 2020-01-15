@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
+import "./App.less";
 
 export default function App() {
-  return <div className="text">hello,world！</div>;
+  return <div className="text">hello,<span>world</span>！</div>;
 }

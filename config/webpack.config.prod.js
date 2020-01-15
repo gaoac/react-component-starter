@@ -14,7 +14,7 @@ module.exports = merge(common, {
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, "../dist")
   },
   optimization: {
     minimizer: [
@@ -51,8 +51,8 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        test: /\.(css|less)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"]
       }
     ]
   },
