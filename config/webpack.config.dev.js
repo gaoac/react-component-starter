@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
+  devtool: "cheap-module-eval-source-map",
   mode: "development",
   entry: {
     index: "./example/src/index.js"
